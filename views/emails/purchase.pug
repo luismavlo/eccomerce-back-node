@@ -1,0 +1,11 @@
+extends baseEmail
+
+block purchaseContent
+  p Hola,
+    p ¡felicidades por tu compra esperamos la disfrutes!
+    p El resumen de tu pedido es el siguiente:
+    ul
+      each productInCart in productsInCart
+        li producto: #{productInCart.product.title} || valor: #{productInCart.product.price} || cantidad: #{productInCart.quantity}
+    p El precio total de la compra es: #{totalPrice} 
+    p ¡Muchas gracias! por preferirnos.
